@@ -33,5 +33,5 @@ Make sure you have the following installed:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/airbnb-clone-frontend.git
-cd airbnb-clone-frontend
+git clone https://github.com/namezzy/Airbnb
+cd Airbnb

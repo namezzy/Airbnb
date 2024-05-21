@@ -1,5 +1,5 @@
 const initialState = {
-  currentPage: 3
+  currentPage: 3,
 };
 
 function reducer(state = initialState, action) {
@@ -9,4 +9,4 @@ function reducer(state = initialState, action) {
   }
 }
 
-export default reducer
+export default reducer;

@@ -10,13 +10,13 @@ import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Suspense fallback="Loading....">
-      <Provider store={store}>
-        <HashRouter>
-          <App />
-        </HashRouter>
-      </Provider>
-    </Suspense>
-  </React.StrictMode>
+  //<React.StrictMode>
+  <Suspense fallback="Loading....">
+    <Provider store={store}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </Provider>
+  </Suspense>
+  // </React.StrictMode>
 );

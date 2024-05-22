@@ -7,11 +7,11 @@ import AppFooter from './components/app-footer'
 const App = memo(() => {
   return (
     <div className='app'>
-      <AppHeader/>
+      <AppHeader />
       <div className='page'>
         {useRoutes(routes)}
       </div>
-      <AppFooter/>
+      <AppFooter />
     </div>
   )
 })

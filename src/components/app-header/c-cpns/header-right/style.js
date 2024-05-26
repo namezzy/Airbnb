@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+// const boxShadow = `
+// transition: box-shadow 200ms ease;
+// &:hover {
+//   box-shadow: 0 2px 4px rgba(0,0,0,18);
+// }
+// `;
+
 export const RightWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -36,8 +43,14 @@ export const RightWrapper = styled.div`
     border: 1px solid #ccc;
     border-radius: 25px;
     background-color: #fff;
-    color:  ${props => props.theme.text.primaryColor};
+    color: ${(props) => props.theme.text.primaryColor};
     cursor: pointer;
-    
+
+    /* transition: box-shadow 200ms ease;
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0,0,0,18);
+    } */
+
+    ${props => props.theme.mixin.boxShadow}
   }
 `;

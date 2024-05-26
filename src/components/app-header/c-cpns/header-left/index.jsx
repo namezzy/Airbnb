@@ -9,7 +9,7 @@ const HeaderLeft = memo(() => {
         <IconLogo />
       </div>
       <div>
-        xxx
+      
       </div>
     </LeftWrapper>
   );

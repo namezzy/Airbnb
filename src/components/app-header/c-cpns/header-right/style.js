@@ -14,7 +14,6 @@ export const RightWrapper = styled.div`
   align-items: center;
 
   color: ${(props) => props.theme.text.primaryColor};
-  font-size: 14px;
   font-weight: 600px;
 
   .btns {
@@ -51,6 +50,6 @@ export const RightWrapper = styled.div`
       box-shadow: 0 2px 4px rgba(0,0,0,18);
     } */
 
-    ${props => props.theme.mixin.boxShadow}
+    ${(props) => props.theme.mixin.boxShadow}
   }
 `;

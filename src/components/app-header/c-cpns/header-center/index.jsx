@@ -6,7 +6,7 @@ const HeaderCenter = memo(() => {
   return (
     <CenterWrapper>
       <div className="search-bar">
-        <div className="text">Search And Experiences</div>
+        <div className="text">搜索房源和体验</div>
         <div className="icon">
           <IconSearchBar />
         </div>

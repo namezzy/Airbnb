@@ -10,11 +10,15 @@ const HeaderRight = memo(() => {
 
   /** 副作用代码 */
 
-  useEffect( ()=> {
-    window.addEventListener("click", () => {
+  useEffect(() => {
+    function windowHandleClick() {
       setShowPanel(false)
-    }, true)
-  },[])
+    }
+    window.addEventListener("click", windowHandleClick, true)
+    return () => {
+      window.removeEventListener("click", windowHandleClick, true)
+    }
+  }, [])
 
   /** 事件处理函数 */
 

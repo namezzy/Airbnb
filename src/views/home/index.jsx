@@ -10,7 +10,6 @@ const Home = memo(() => {
 const {goodPriceInfo } = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo
 }),shallowEqual)
-
   /** 派发一步的事件：发送网络请求 */
   const dispatch = useDispatch()
   useEffect(() => {
@@ -23,8 +22,8 @@ const {goodPriceInfo } = useSelector((state) => ({
         <h2>{goodPriceInfo.title}</h2>
         <ul>
           {
-            goodPriceInfo.list.map(item => {
-              return <li key={item.id}>{item.name}</li>
+            goodPriceInfo?.list?.map(item => {
+              return <li key={item}>{item.name}</li>
             })
           }
         </ul>

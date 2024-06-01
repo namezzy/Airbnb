@@ -2,11 +2,15 @@ import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 const RoomItem = memo((props) => {
+
+    const { itemData } = props
   return (
-    <div>RoomItem </div>
+    <div>{itemData.name} </div>
   )
 })
 
-RoomItem .propTypes = {}
+RoomItem .propTypes = {
+    itemData: PropTypes.object
+}
 
 export default RoomItem 

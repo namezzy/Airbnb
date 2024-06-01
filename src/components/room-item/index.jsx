@@ -1,16 +1,14 @@
-import PropTypes from 'prop-types'
-import React, { memo } from 'react'
+import PropTypes from "prop-types";
+import React, { memo } from "react";
+import { ItemWrapper } from "./style";
 
 const RoomItem = memo((props) => {
+  const { itemData } = props;
+  return <ItemWrapper>{itemData.name}</ItemWrapper>;
+});
 
-    const { itemData } = props
-  return (
-    <div>{itemData.name} </div>
-  )
-})
+RoomItem.propTypes = {
+  itemData: PropTypes.object,
+};
 
-RoomItem .propTypes = {
-    itemData: PropTypes.object
-}
-
-export default RoomItem 
+export default RoomItem;

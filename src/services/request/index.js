@@ -27,5 +27,5 @@ class leviRequest {
     return this.request({...config, method: "post"})
   }
 }
-
+// eslint-disable-next-line
 export default new leviRequest(BASE_URL, TIMEOUT);

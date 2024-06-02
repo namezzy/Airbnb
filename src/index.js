@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 
 import "normalize.css";
 import "./assets/css/index.less";
+import "antd/dist/antd.less"
 import store from "./store";
 import theme from "./assets/theme";
 

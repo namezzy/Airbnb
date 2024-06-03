@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
-box-sizing: border-box;
+  box-sizing: border-box;
   width: 25%;
   padding: 8px;
 
@@ -29,17 +29,17 @@ box-sizing: border-box;
     margin: 10px 0 5px;
     font-size: 12px;
     font-weight: 700;
-    color: ${props => props.verifyColor};
+    color: ${(props) => props.verifyColor};
   }
 
   .name {
     font-size: 16px;
     font-weight: 700;
 
-    overflow: hidden;  
-    text-overflow: ellipsis; 
-    display: -webkit-box; 
-    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 
@@ -52,15 +52,14 @@ box-sizing: border-box;
     align-items: center;
     font-size: 12px;
     font-weight: 600;
-    color: ${props => props.theme.color.textColor};
+    color: ${(props) => props.theme.color.primaryColor};
 
     .count {
       margin: 0 2px 0 4px;
     }
 
     .MuiRating-decimal {
-      margin-right: -3px;
+      margin-right: -2px;
     }
-
-
+  }
 `;

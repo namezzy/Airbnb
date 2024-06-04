@@ -1,8 +1,9 @@
 {
-    "rewrites": [
+    "rewrites": [ 
+       
       {
-        "source": "/home/:match*",
-        "destination": "http://codercba.com:1888/airbnb/api/home/:match*"
+        "source": "/api/(.*)",
+        "destination": "/api/proxy"
       }
     ]
-  }
+   }

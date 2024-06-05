@@ -7,8 +7,8 @@ module.exports = (req, res) => {
     // 代理目标地址
     // 这里使用 backend 主要用于区分 vercel serverless 的 api 路径
     // target 替换为你跨域请求的服务器 如： http://codercba.com:1888
-    if (req.url.startsWith('/api')) {
-        target = 'http://codercba.com:1888'
+    if (req.url.startsWith('/home')) {
+        target = 'http://codercba.com:1888/airbnb/api'
     }
     // 创建代理对象并转发请求
     createProxyMiddleware({

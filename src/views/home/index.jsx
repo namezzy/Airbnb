@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import HomeBanner from "./c-cpns/home-banner";
@@ -21,7 +21,13 @@ const Home = memo(() => {
   );
 
   /** 数据转换 */
+
+  const [name, setName] = useState("佛山")
   const  tabNames = discountInfo.dest_address?.map(item => item.name)
+  const  tabClickHandle = useCallback(function (index, name) {
+      setName(name)
+
+  }, [])
   /** 派发一步的事件：发送网络请求 */
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,8 +39,8 @@ const Home = memo(() => {
       <div className="content">
         <div className="discount">
           <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle}/>
-          <SectionTabs tabNames={tabNames}/>
-          <SectionRooms roomList={discountInfo.dest_list?.["成都"]} itemWidth="33.333333%"/>
+          <SectionTabs tabNames={tabNames} tabClick={tabClickHandle}/>
+          <SectionRooms roomList={discountInfo.dest_list?.[name]} itemWidth="33.333333%"/>
 
         </div>
 

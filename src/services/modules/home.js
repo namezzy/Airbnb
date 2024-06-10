@@ -11,9 +11,15 @@ export function getHomeHighScoreData() {
     url: "/home/highscore",
   });
 }
-
+ 
 export function getHomeDiscountData() {
   return leviRequest.get({
     url: "/home/discount",
   });
+}
+
+export function getHomeHotRecommendData() {
+    return leviRequest.get({
+      url: "/home/hotrecommenddest"
+    });
 }

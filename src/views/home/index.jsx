@@ -10,14 +10,16 @@ import { isEmptyO } from "@/utils";
 
 const Home = memo(() => {
   /**从Redux中获取数据 */
-  const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector(
-    (state) => ({
-      goodPriceInfo: state.home.goodPriceInfo,
-      highScoreInfo: state.home.highScoreInfo,
-      discountInfo: state.home.discountInfo,
-    }),
-    shallowEqual
-  );
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo } =
+    useSelector(
+      (state) => ({
+        goodPriceInfo: state.home.goodPriceInfo,
+        highScoreInfo: state.home.highScoreInfo,
+        discountInfo: state.home.discountInfo,
+        recommendInfo: state.home.recommendInfo,
+      }),
+      shallowEqual
+    );
 
   /** 派发一步的事件：发送网络请求 */
   const dispatch = useDispatch();
@@ -34,6 +36,7 @@ const Home = memo(() => {
           <SectionRooms roomList={discountInfo.dest_list?.[name]} itemWidth="33.333333%"/>
         </div> */}
         {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo} />}
+        {isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo} />}
         {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
         {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
       </div>

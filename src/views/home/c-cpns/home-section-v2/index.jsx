@@ -5,6 +5,7 @@ import SectionHeader from "@/components/section-header";
 import SectionRooms from "@/components/section-rooms";
 import SectionTabs from "@/components/setion-tabs";
 import { SectionV2Wrapper } from "./style";
+import SectionFooter from "@/components/section-footer";
 
 const HomeSectionV2 = memo((props) => {
   /**从props获取数据 */
@@ -29,6 +30,7 @@ const HomeSectionV2 = memo((props) => {
         roomList={infoData.dest_list?.[name]}
         itemWidth="33.33333%"
       />
+      <SectionFooter name={name}/>
     </SectionV2Wrapper>
   );
 });

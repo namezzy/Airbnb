@@ -14,7 +14,6 @@ const HomeSectionV2 = memo((props) => {
   /** 定义内部的state */
   const initialName = Object.keys(infoData.dest_list)[0];
   const [name, setName] = useState(initialName);
-  console.log(name);
   const tabNames = infoData.dest_address?.map((item) => item.name);
 
   /**事件处理函数 */

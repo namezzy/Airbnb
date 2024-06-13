@@ -33,6 +33,7 @@ const homeSlice = createSlice({
     highScoreInfo: {},
     discountInfo: {},
     recommendInfo: {},
+    longforInfo: {},
   },
 
   reducers: {
@@ -49,6 +50,10 @@ const homeSlice = createSlice({
     },
     changeRecommendInfoAction(state, { payload }) {
       state.recommendInfo = payload;
+    },
+
+    changeLongforInfoAction(state, { payload }) {
+      state.longforInfo = payload;
     },
   },
 

@@ -23,3 +23,9 @@ export function getHomeHotRecommendData() {
       url: "/home/hotrecommenddest"
     });
 }
+
+export function getHomeLongforData() {
+  return leviRequest.get({
+    url: "/home/longfor"
+  })
+}

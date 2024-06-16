@@ -11,7 +11,7 @@ export function getHomeHighScoreData() {
     url: "/home/highscore",
   });
 }
- 
+
 export function getHomeDiscountData() {
   return leviRequest.get({
     url: "/home/discount",
@@ -19,13 +19,19 @@ export function getHomeDiscountData() {
 }
 
 export function getHomeHotRecommendData() {
-    return leviRequest.get({
-      url: "/home/hotrecommenddest"
-    });
+  return leviRequest.get({
+    url: "/home/hotrecommenddest",
+  });
 }
 
 export function getHomeLongforData() {
   return leviRequest.get({
-    url: "/home/longfor"
-  })
+    url: "/home/longfor",
+  });
+}
+
+export function getHomePlusData() {
+  return leviRequest.get({
+    url: "/home/plus",
+  });
 }

@@ -7,15 +7,13 @@ const EntireFilter = memo(() => {
   const [ selectItems, setSelectItems ] = useState([])
 
   function itemClickHandle(item) {
-    console.log(item)
+    const newItems = [...selectItems]
     if(newItems.includes(item)) { // 移除操作
         const itemIndex = newItems.findIndex(filterItem => filterItem === item)
         newItems.splice(itemIndex,1)
     } else { // 添加操作
       newItems.push(item)
     }
-    const newItems = [...selectItems]
-    newItems.push(item)
     setSelectItems(newItems)
   }
   return (

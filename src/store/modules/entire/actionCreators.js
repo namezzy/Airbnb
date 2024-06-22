@@ -16,14 +16,18 @@ export const changeTotalCountAction = (totalCount) => ({
   totalCount,
 });
 
-export const fetchRoomListAction = () => {
+export const fetchRoomListAction = (page = 0) => {
   // 新的函数
   return async (dispatch,getState) => {
-    // 根据页码获取最新的数据
-    const currentPage = getState().entire.currentPage
-    const res = await getEntireRoomList(currentPage * 20);
 
-    //  获取到最新的数据, 保存redux的store中
+     // 0. 修改currentPage
+  dispatch(changeCurrentPageAction(page))
+
+    // 1. 根据页码获取最新的数据
+    //const currentPage = getState().entire.currentPage
+    const res = await getEntireRoomList(page * 20);
+
+    // 2.  获取到最新的数据, 保存redux的store中
     const roomList = res.list;
     const totalCount = res.totalCount;
     dispatch(changeRoomListAction(roomList));

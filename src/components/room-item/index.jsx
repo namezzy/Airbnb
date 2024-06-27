@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
-import React, { memo, useRef } from "react";
+import React, { memo, useRef, useState } from "react";
 import { ItemWrapper } from "./style";
 import { Carousel } from "antd";
 import { Rating } from "@mui/material";
 import IconArrowLeft from "@/assets/svg/icon-arrow-left";
 import IconArrowRight from "@/assets/svg/icon-arrow-right";
+import Indicator from "@/base-ui/indicator";
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth = "25%" } = props;
+  const { selectIndex, setSetIndex } = useState(0)
 
   const sliderRef = useRef()
 
@@ -32,6 +34,19 @@ const RoomItem = memo((props) => {
             <div className="btn right" onClick={e => controlClickHandle(true)}>
               <IconArrowRight width="30" height="30" />
             </div>
+          </div>
+          <div className="indicator">
+            <Indicator selectIndex={selectIndex}>
+              {
+                itemData?.picture_urls?.map((item,index)=> {
+                    return (
+                      <div className="dot-item" key={item}>
+                          <span className="dot"></span>
+                      </div>
+                    )
+                })
+              }
+            </Indicator>
           </div>
           <Carousel dots={false} ref={sliderRef}>
             {itemData?.picture_urls?.map((item) => {

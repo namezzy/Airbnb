@@ -110,7 +110,7 @@ export const ItemWrapper = styled.div`
   }
 
   .price {
-    margin: 8px 0;
+    margin: 9px 0;
   }
 
   .bottom {

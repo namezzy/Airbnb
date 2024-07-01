@@ -10,7 +10,7 @@ import classNames from "classnames";
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth = "25%" } = props;
-  const { selectIndex, setSetIndex } = useState(0)
+  const [selectIndex, setSelectIndex ] = useState(0)
 
   const sliderRef = useRef()
 
@@ -24,11 +24,11 @@ const RoomItem = memo((props) => {
       const length = itemData.picture_urls.length;
       if(newIndex < 0  ) newIndex = length - 1
       if(newIndex > length - 1 )  newIndex = 0
-      setSetIndex(newIndex)
+      setSelectIndex(newIndex)
   }
   return (
     <ItemWrapper
-      verifyColor={itemData?.verify_info.text_color || "#39576a"}
+      verifyColor={itemData?.verify_info?.text_color || "#39576a"}
       itemWidth={itemWidth}
     >
       <div className="inner">

@@ -8,7 +8,7 @@ const Detail = memo(() => {
   }))
   console.log(detailInfo)
   return (
-    <div>{detailInfo.name} </div>
+    <div>{detailInfo?.name} </div>
   )
 })
 

@@ -7,7 +7,7 @@ const detailSlice = createSlice({
   },
   reducers: {
     changeDetailInfoAction(state, { payload }) {
-      state.detailInfo = payload;
+      state.detailInfo = payload
     },
   },
 });

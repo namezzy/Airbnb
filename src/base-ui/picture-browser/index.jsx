@@ -5,7 +5,7 @@ import { BrowserWrapper } from "./style";
 import IconClose from "@/assets/svg/icon-close";
 
 const PictureBrowser = memo((props) => {
-    const {pictureUrls} = props
+    const {pictureUrls,closeClick} = props
   // 当图片浏览器展示出来时 滚动的功能消失
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -13,10 +13,16 @@ const PictureBrowser = memo((props) => {
         document.body.style.overflow = "auto"
     }
   }, []);
+
+  /**事件监听的逻辑 */
+  function closeBtnClickHandle() {
+      if(closeClick) closeClick()
+  }
+
   return (
     <BrowserWrapper>
     <div className="top">
-        <div className="close-btn">
+        <div className="close-btn" onClick={closeBtnClickHandle}>
             <IconClose/>
         </div>
     </div>

@@ -32,7 +32,7 @@ const DetailPictures = memo(() => {
         </div>
       </div>
 
-      <div className="show-btn" onClick={(e) => setShowBrowser(true)}>
+      <div className="show-btn" onClick={e => setShowBrowser(true)}>
         显示照片
       </div>
       {showBrowser &&

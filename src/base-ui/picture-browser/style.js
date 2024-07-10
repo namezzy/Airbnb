@@ -69,7 +69,7 @@ export const BrowserWrapper = styled.div`
       }
       /*动画样式*/
       .pic-enter {
-        transform: translate(${props => props.isNext ? "100%": "-100%"});
+        transform: translate(${(props) => (props.isNext ? "100%" : "-100%")});
         opacity: 0;
       }
 
@@ -85,7 +85,7 @@ export const BrowserWrapper = styled.div`
 
       .pic-exit-active {
         opacity: 0;
-        transition:  all 200ms ease;
+        transition: all 200ms ease;
       }
     }
   }
@@ -95,7 +95,7 @@ export const BrowserWrapper = styled.div`
     justify-content: center;
     height: 100px;
     margin-top: 10px;
-    
+
     .info {
       position: absolute;
       bottom: 10px;
@@ -115,7 +115,7 @@ export const BrowserWrapper = styled.div`
         margin-top: 3px;
         overflow: hidden;
         transition: height 300ms ease;
-        //height: ${props => props.showList ? "67px": "0"};
+        height: ${(props) => (props.showList ? "67px" : "0")};
 
         .item {
           margin-right: 15px;

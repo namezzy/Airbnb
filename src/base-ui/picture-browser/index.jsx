@@ -9,11 +9,13 @@ import IconArrowRight from "@/assets/svg/icon-arrow-right";
 import IconTriangleArrowBottom from "@/assets/svg/icon-triangle-arrow-bottom";
 import Indicator from "../indicator";
 import classNames from "classnames";
+import IconTriangleArrowTop from "@/assets/svg/icon-triangle-arrow-top";
 
 const PictureBrowser = memo((props) => {
   const { pictureUrls, closeClick } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isNext, setIsNext] = useState(true)
+  const [isNext, setIsNext] = useState(true);
+  const [showList, setShowList] = useState(true);
   // 当图片浏览器展示出来时 滚动的功能消失
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -32,11 +34,16 @@ const PictureBrowser = memo((props) => {
     if (newIndex > pictureUrls.length - 1) newIndex = 0;
 
     setCurrentIndex(newIndex);
-    setIsNext(isNext)
+    setIsNext(isNext);
+  }
+
+  function bottomItemClickHandle(index) {
+    setIsNext(index => currentIndex);
+    setCurrentIndex(index);
   }
 
   return (
-    <BrowserWrapper isNext={isNext}>
+    <BrowserWrapper isNext={isNext} showList={showList}>
       <div className="top">
         <div className="close-btn" onClick={closeBtnClickHandle}>
           <IconClose />
@@ -53,10 +60,10 @@ const PictureBrowser = memo((props) => {
         </div>
         <div className="picture">
           <SwitchTransition mode="in-out">
-            <CSSTransition 
-            key={pictureUrls[currentIndex]}
-            classNames="pic"
-            timeout={200}
+            <CSSTransition
+              key={pictureUrls[currentIndex]}
+              classNames="pic"
+              timeout={200}
             >
               <img src={pictureUrls[currentIndex]} alt="" />
             </CSSTransition>
@@ -64,34 +71,41 @@ const PictureBrowser = memo((props) => {
         </div>
       </div>
       <div className="preview">
-          <div className="info">
-              <div className="desc">
-                  <div className="count">
-                    <span>{currentIndex+1}/{pictureUrls.length}:</span>
-                    <span>room apartment图片{currentIndex+1}</span>
-                  </div>
-                  <div className="toggle">
-                    <span>隐藏照片的列表</span>
-                    <IconTriangleArrowBottom/>
-                  </div>
-              </div>
-              <div className="list">
-                <Indicator selectIndex={currentIndex}>
-                  {
-                    pictureUrls.map((item, index) => {
-                      return ( 
-                      <div 
-                      className={classNames("item", {active: currentIndex === index })} 
-                      key={item}
-                      onClick={e => setCurrentIndex(index)}
-                      >
-                        <img src={item} alt="" />
-                      </div>)        
-                    })
-                  }
-                </Indicator>
-              </div>
+        <div className="info">
+          <div className="desc">
+            <div className="count">
+              <span>
+                {currentIndex + 1}/{pictureUrls.length}:
+              </span>
+              <span>room apartment图片{currentIndex + 1}</span>
+            </div>
+            <div className="toggle" onClick={(e) => setShowList(!showList)}>
+              <span>{showList ? "隐藏" : "显示"}照片的列表</span>
+              {showList ? (
+                <IconTriangleArrowBottom />
+              ) : (
+                <IconTriangleArrowTop />
+              )}
+            </div>
           </div>
+          <div className="list">
+            <Indicator selectIndex={currentIndex}>
+              {pictureUrls.map((item, index) => {
+                return (
+                  <div
+                    className={classNames("item", {
+                      active: currentIndex === index,
+                    })}
+                    key={item}
+                    onClick={(e) => bottomItemClickHandle(index)}
+                  >
+                    <img src={item} alt="" />
+                  </div>
+                );
+              })}
+            </Indicator>
+          </div>
+        </div>
       </div>
     </BrowserWrapper>
   );

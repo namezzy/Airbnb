@@ -9,19 +9,27 @@ import classNames from "classnames";
 const AppHeader = memo(() => {
   /** 从redux中获取数据 */
 
-  const { headerConfig } = useSelector((state) => ({
-    headerConfig: state.main.headerConfig
-  }),shallowEqual);
+  const { headerConfig } = useSelector(
+    (state) => ({
+      headerConfig: state.main.headerConfig,
+    }),
+    shallowEqual
+  );
 
-  const {isFixed} = headerConfig
-  console.log(isFixed)
-
+  const { isFixed } = headerConfig;
+  console.log(isFixed);
 
   return (
-    <HeaderWrapper className={classNames({fixed: isFixed})}>
-      <HeaderLeft />
-      <HeaderCenter />
-      <HeaderRight />
+    <HeaderWrapper className={classNames({ fixed: isFixed })}>
+      <div className="content">
+        <div className="top">
+          <HeaderLeft />
+          <HeaderCenter />
+          <HeaderRight />
+        </div>
+      </div>
+      <div className="search-area"></div>
+      <div className="cover"></div>
     </HeaderWrapper>
   );
 });

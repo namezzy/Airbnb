@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
   border-bottom: 1px solid #eee;
 
-
   &.fixed {
     position: fixed;
     z-index: 99;
@@ -32,6 +31,10 @@ export const HeaderWrapper = styled.div`
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
+`;
+export const SearchAreaWrapper = styled.div`
+  transition: height 250ms ease;
+  height: ${(props) => (props.isSearch ? "100px" : "0")};
 `;

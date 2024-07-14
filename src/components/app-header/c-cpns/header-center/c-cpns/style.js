@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
-
 export const CenterWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   height: 48px;
-
   .search-bar {
-    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +16,8 @@ export const CenterWrapper = styled.div`
     border: 1px solid #ddd;
     border-radius: 24px;
     cursor: pointer;
-    ${props => props.theme.mixin.boxShadow};
+
+    ${(props) => props.theme.mixin.boxShadow}
 
     .text {
       padding: 0 16px;
@@ -35,7 +33,7 @@ export const CenterWrapper = styled.div`
       height: 32px;
       border-radius: 50%;
       color: #fff;
-      background-color: ${props => props.theme.color.primaryColor};
+      background-color: ${(props) => props.theme.color.primaryColor};
     }
   }
 
@@ -53,7 +51,7 @@ export const CenterWrapper = styled.div`
   }
 
   .detail-exit {
-    transform: scale(1.0) translateY(0);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
 
@@ -69,7 +67,7 @@ export const CenterWrapper = styled.div`
   }
 
   .detail-enter-active {
-    transform: scale(1.0) translateY(0);
+    transform: scale(1) translateY(0);
     opacity: 1;
     transition: all 250ms ease;
   }
@@ -81,11 +79,11 @@ export const CenterWrapper = styled.div`
 
   .bar-enter-active {
     transition: all 250ms ease;
-    transform: scale(1.0) translateY(0);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
 
   .bar-exit {
     opacity: 0;
   }
-`
+`;

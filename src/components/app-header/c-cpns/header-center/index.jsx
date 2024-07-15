@@ -1,4 +1,5 @@
 import React, { memo, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import SearchTitles from "@/assets/data/search_titles";
 import SearchTabs from "./c-cpns/search-tabs";
@@ -13,25 +14,37 @@ const HeaderCenter = memo((props) => {
   const titles = SearchTitles.map((item) => item.title);
 
   function searchBarClickHandle() {
-     if(searchBarClick) searchBarClick()
+    if (searchBarClick) searchBarClick();
   }
   return (
     <CenterWrapper>
-      {!isSearch ? (
+      <CSSTransition
+        in={!isSearch}
+        classNames="bar"
+        timeout={250}
+        unmountOnExit={true}
+      >
         <div className="search-bar" onClick={searchBarClickHandle}>
           <div className="text">搜索房源和体验</div>
           <div className="icon">
             <IconSearchBar />
           </div>
         </div>
-      ) : (
+      </CSSTransition>
+
+      <CSSTransition
+        in={isSearch}
+        classNames="detail"
+        timeout={250}
+        unmountOnExit={true}
+      >
         <div className="search-detail">
-          <SearchTabs titles={[titles]} tabClick={setTabIndex} />
+          <SearchTabs titles={titles} tabClick={setTabIndex} />
           <div className="infos">
             <SearchSections searchInfos={SearchTitles[tabIndex].searchInfos} />
           </div>
         </div>
-      )}
+      </CSSTransition>
     </CenterWrapper>
   );
 });

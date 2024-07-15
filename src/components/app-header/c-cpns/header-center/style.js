@@ -52,7 +52,7 @@ export const CenterWrapper = styled.div`
     }
   }
 
- /* .detail-exit {
+ .detail-exit {
     transform: scale(1.0) translateY(0);
     opacity: 1;
   }
@@ -87,5 +87,5 @@ export const CenterWrapper = styled.div`
 
   .bar-exit { 
     opacity: 0;
-  } */
+  }
 `

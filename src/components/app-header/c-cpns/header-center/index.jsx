@@ -10,10 +10,10 @@ const HeaderCenter = memo((props) => {
   const { isSearch, searchBarClick } = props;
 
   const [tabIndex, setTabIndex] = useState(0);
-  const titles = SearchTitles.map((item) => item.titles);
+  const titles = SearchTitles.map((item) => item.title);
 
   function searchBarClickHandle() {
-    
+     if(searchBarClick) searchBarClick()
   }
   return (
     <CenterWrapper>

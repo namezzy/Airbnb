@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 const AppHeader = memo(() => {
   /** 定义组件内部的状态 */
-  const [isSearch, setIsSearch] = useState(true);
+  const [isSearch, setIsSearch] = useState(false);
 
   /** 从redux中获取数据 */
 
@@ -27,12 +27,12 @@ const AppHeader = memo(() => {
       <div className="content">
         <div className="top">
           <HeaderLeft />
-          <HeaderCenter isSearch={isSearch} searchBarClick={e=>setIsSearch(true)} />
+          <HeaderCenter isSearch={isSearch} searchBarClick={e => setIsSearch(true)} />
           <HeaderRight />
         </div>
       </div>
       <SearchAreaWrapper isSearch={isSearch} />
-      {isSearch && <div className="cover"></div>}
+      {isSearch && <div className="cover" onClick={e => setIsSearch(false)}></div>}
     </HeaderWrapper>
   );
 });

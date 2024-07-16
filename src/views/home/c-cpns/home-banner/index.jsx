@@ -3,7 +3,7 @@ import { BannerWrapper } from './style'
 
 const HomeBanner = memo(() => {
   return (
-    <BannerWrapper>index</BannerWrapper>
+    <BannerWrapper></BannerWrapper>
   )
 })
 

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+
 import ReactDOM from "react-dom/client";
 import App from "@/App";
 import { HashRouter } from "react-router-dom";
@@ -15,13 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   
     <Provider store={store}>
-      <Suspense fallback="Loading....">
       <ThemeProvider theme={theme}>
         <HashRouter>
           <App />
         </HashRouter>
       </ThemeProvider>
-      </Suspense>
     </Provider>
 
 );

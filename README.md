@@ -6,9 +6,9 @@ This is a frontend project for an Airbnb clone, built using React. The project a
 
 ![image-20240716215750552](https://cdn.jsdelivr.net/gh/Levi0219/save-2024@main/image-20240716215750552.png)
 
-![image-20240716215810397](C:\Users\coolz\AppData\Roaming\Typora\typora-user-images\image-20240716215810397.png)
+![image-20240716215810397](https://cdn.jsdelivr.net/gh/Levi0219/save-2024@main/image-20240716215810397.png)
 
-![image-20240716215827157](C:\Users\coolz\AppData\Roaming\Typora\typora-user-images\image-20240716215827157.png)
+![image-20240716215827157](https://cdn.jsdelivr.net/gh/Levi0219/save-2024@main/image-20240716215827157.png)
 
 ## Table of Contents
 

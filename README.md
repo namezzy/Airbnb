@@ -43,4 +43,5 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/namezzy/Airbnb
 cd Airbnb
+npm install
 npm run start
